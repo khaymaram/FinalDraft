@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Results Page</h1>
+    <form action="/starredLyrics" method="POST">
+        <input type="hidden" name="artist" value="<%= artist %>">
+        <input type="hidden" name="songName" value="<%= songName %>">
+        <input type="hidden" name="lyrics" value="<%= lyrics %>">
+        <input type="submit" value="Star These Lyrics">
+    </form>
+    <p>
+        <%= artist %> - <%= songName %>
+    </p>
+    <pre><%= lyrics %></pre>
+    <br>
+    <a href="/">HOME</a>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starred Lyrics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css"></head>
+<body>
+    <h1>Starred Lyrics</h1>
+
+    <% const lyricsList = Array.isArray(starredLyrics) ? starredLyrics : []; %>
+
+    <% if (lyricsList.length === 0) { %>
+        <div class="no-results">
+            <p>You haven't starred any lyrics yet!</p>
+            <a href="/search" class="btn-primary">Search for Lyrics</a>
+        </div>
+    <% } else { %>
+        <p class="results-count">You have <%= lyricsList.length %> starred song<%= lyricsList.length !== 1 ? 's' : '' %></p>
+
+        <table class="lyrics-table">
+            <thead>
+                <tr>
+                    <th>Song Name</th>
+                    <th>Artist</th>
+                    <th>Lyrics</th>
+                    <th>Saved On</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% lyricsList.forEach(lyric => { %>
+                    <tr>
+                        <td class="song-name-cell"><%= lyric.songName %></td>
+                        <td class="artist-cell"><%= lyric.artist %></td>
+                        <td class="lyrics-cell">
+                            <details>
+                                <summary>Show Lyrics</summary>
+                                <div class="lyrics-content">
+                                    <pre><%= lyric.lyrics %></pre>
+                                </div>
+                            </details>
+                        </td>
+                        <td class="date-cell"><%= lyric.savedAt.toLocaleDateString() %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+    <br>
+    <a href="/">HOME</a>
+</body>
+</html>

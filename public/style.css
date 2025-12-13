@@ -1,0 +1,119 @@
+body {
+    text-align: center;
+    background-color: #6096ba;
+    font-family: "Lexend Deca", sans-serif;
+    color: rgb(241, 238, 255);
+    font-size: 20px;
+}
+
+a:active {
+    color:#0b1121;
+}
+input{
+    padding: 7px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: "Lexend Deca", sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Table Styles */
+.lyrics-table {
+    width: 100%;
+    background-color: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    border: 2px solid #334155;
+}
+
+.lyrics-table thead {
+    background-color: #334155;
+}
+
+.lyrics-table th {
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+    color: #60a5fa;
+    font-size: 1.1em;
+    border-bottom: 2px solid #475569;
+}
+
+.lyrics-table td {
+    padding: 20px;
+    border-bottom: 1px solid #334155;
+    color: #cbd5e1;
+    font-size: 1em;
+}
+
+.lyrics-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.lyrics-table tbody tr:hover {
+    background-color: #2d3748;
+}
+
+.song-name-cell {
+    font-weight: 600;
+    color: #60a5fa;
+    font-size: 1.1em;
+}
+
+.artist-cell {
+    color: #94a3b8;
+}
+
+.lyrics-cell {
+    max-width: 500px;
+}
+
+.lyrics-cell details {
+    cursor: pointer;
+}
+
+.lyrics-cell summary {
+    color: #60a5fa;
+    font-weight: 600;
+    padding: 10px;
+    background-color: #0f172a;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.lyrics-cell summary:hover {
+    background-color: #1e293b;
+}
+
+.lyrics-content {
+    margin-top: 15px;
+    background-color: #0f172a;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.lyrics-content pre {
+    color: #e2e8f0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95em;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.date-cell {
+    color: #64748b;
+    font-size: 0.95em;
+}
+
+.action-cell {
+    text-align: center;
+}

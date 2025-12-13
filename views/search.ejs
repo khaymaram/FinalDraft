@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <h1>Lyric Search</h1>
+
+  <form action="/search" method="POST">
+    <fieldset>
+      <legend><strong>Song Information</strong></legend>
+
+      <label>
+        Artist:
+        <input type="text" name="artist" required>
+      </label>
+
+      <label>
+        Song Title:
+        <input type="text" name="songName" required>
+      </label>
+    </fieldset>
+
+    <br>
+    <input type="reset">
+    <input type="submit" value="Search">
+  </form>
+
+  <br>
+  <a href="/">HOME</a>
+</body>
+</html>
