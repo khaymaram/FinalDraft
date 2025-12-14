@@ -1,4 +1,4 @@
-## Submitted by:
+## Submitted by: Khaymar Moe (kamoe25)
 
 
 ### Group Members: Khaymar Moe (kamoe25), Saisha Pitani (spitani), Nithika Ramanathan (nithikar), Nithya Sunkara (nsunkara)
@@ -13,7 +13,7 @@ YouTube Video Link: [https://youtu.be/7vSEzaClYCY](https://youtu.be/7vSEzaClYCY)
 APIs: lyrics.ovh ([https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search?console=1 ](https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search?console=1))
 
 
-Contact Email:  
+Contact Email: nithikar@terpmail.umd.edu
 
 
 Deployed App Link: [https://lyricfinder-cmsc335finalproject.onrender.com/](https://lyricfinder-cmsc335finalproject.onrender.com/)
