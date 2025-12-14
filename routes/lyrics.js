@@ -12,15 +12,25 @@ router.post('/search', async (req, res) => {
   const { songName, artist } = req.body;
 
   if (!songName || !artist) {
-    return res.render('search', { error: "Please enter both song name and artist" });
+    return res.render('search', {
+      error: "Please enter both song name and artist"
+    });
   }
+
+  // ⏱ timeout controller
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 3000); // 3 seconds
 
   try {
     const url = `https://api.lyrics.ovh/v1/${encodeURIComponent(artist)}/${encodeURIComponent(songName)}`;
-    const response = await fetch(url);
+    const response = await fetch(url, { signal: controller.signal });
+
+    clearTimeout(timeout);
 
     if (!response.ok) {
-      return res.render('search', { error: "Lyrics not found. Please check artist and song." });
+      return res.render('search', {
+        error: "Lyrics not found. Please check artist and song."
+      });
     }
 
     const data = await response.json();
@@ -32,10 +42,19 @@ router.post('/search', async (req, res) => {
     });
 
   } catch (err) {
+    if (err.name === "AbortError") {
+      return res.render('search', {
+        error: "Search timed out. Please try another song."
+      });
+    }
+
     console.error("Fetch error:", err);
-    res.render('search', { error: "An error occurred while fetching lyrics. Try again." });
+    res.render('search', {
+      error: "An error occurred while fetching lyrics. Try again."
+    });
   }
 });
+
 
 // Star a lyric (save to MongoDB)
 router.post('/starredLyrics', async (req, res) => {
