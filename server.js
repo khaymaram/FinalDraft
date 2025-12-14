@@ -6,9 +6,10 @@ const path = require("path");
 const app = express();
 const portNumber = 3001;
 
-require("dotenv").config({
-  path: path.resolve(__dirname, "credentialsDontPost/.env"),    
-});
+// require("dotenv").config({
+//   path: path.resolve(__dirname, "credentialsDontPost/.env"),    
+// }); 
+// commented out for render deployment
 
 const lyricsRouter = require("./routes/lyrics");
 
