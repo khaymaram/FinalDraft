@@ -1,22 +1,24 @@
-const express = require("express");
+const express = require("express"); // accessing express module
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser"); // to handle post params
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const portNumber = 3001;
 
 require("dotenv").config({
-  path: path.resolve(__dirname, "credentialsDontPost/.env"),
+  path: path.resolve(__dirname, "credentialsDontPost/.env"),    
 });
 
 const lyricsRouter = require("./routes/lyrics");
 
 app.set("view engine", "ejs");
+// ejs templates
 app.set("views", path.join(__dirname, "views"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static("public"));
+// static file serving
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get("/", (req, res) => {
@@ -27,13 +29,13 @@ app.use("/", lyricsRouter);
 
 (async () => {
   try {
+    // mongoose connection
     await mongoose.connect(process.env.MONGO_CONNECTION_STRING);
     console.log("Connected to MongoDB");
 
-    app.listen(PORT, () => {
-      console.log(`Server listening on port ${PORT}`);
-      console.log(`http://localhost:${PORT}`);
-    });
+    console.log(`Server listening on port ${portNumber}`)
+    console.log(`main URL http://localhost:${portNumber}`);
+    app.listen(portNumber);
 
   } catch (err) {
     console.error("MongoDB connection error:", err);

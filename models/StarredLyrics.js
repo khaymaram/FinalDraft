@@ -1,3 +1,4 @@
+// using mongoose to interact with mongoDB 
 const mongoose = require("mongoose");
 
 const starredLyricsSchema = new mongoose.Schema({

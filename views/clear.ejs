@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <title>Clear Songs</title>
+</head>
+
+<body>
+    <h1>Clear all songs</h1>
+
+    <form method="POST" action="/clear">
+        <button type="submit">Clear Songs</button>
+    </form>
+
+    <script>
+        window.onsubmit = () => {
+          return confirm("Are you sure you want to clear all the starred lyrics?");
+        }
+      </script>
+
+    <hr>
+
+    <a href="/">HOME</a>
+</body>
+
+</html>

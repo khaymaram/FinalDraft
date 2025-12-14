@@ -1,3 +1,4 @@
+/* css with background color, google font, font size, and color properties */
 body {
     text-align: center;
     background-color: #6096ba;
@@ -9,7 +10,7 @@ body {
 a:active {
     color:#0b1121;
 }
-input{
+input, button{
     padding: 7px 14px;
     border: none;
     border-radius: 8px;

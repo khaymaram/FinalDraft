@@ -11,12 +11,12 @@
 <body>
     <h1>Starred Lyrics</h1>
 
-    <% const lyricsList = Array.isArray(starredLyrics) ? starredLyrics : []; %>
+    <% const lyricsList = starredLyrics; %>
 
     <% if (lyricsList.length === 0) { %>
         <div class="no-results">
             <p>You haven't starred any lyrics yet!</p>
-            <a href="/search" class="btn-primary">Search for Lyrics</a>
+            <a href="/search" >SEARCH</a>
         </div>
     <% } else { %>
         <p class="results-count">You have <%= lyricsList.length %> starred song<%= lyricsList.length !== 1 ? 's' : '' %></p>
